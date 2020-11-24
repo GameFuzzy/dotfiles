@@ -36,4 +36,3 @@ bspc config presel_feedback_color "$color1"
 
 bspc config focus_follows_pointer true
 
-picom --config $HOME/.config/compton.conf &

@@ -3,7 +3,7 @@
 ## Author : Aditya Shakya
 ## Github : adi1090x
 
-PDIR="/home/fuzzy/.config/polybar"
+PDIR="$HOME/.config/polybar"
 LAUNCH="polybar-msg cmd restart"
  
 if  [[ $1 = "-type-1" ]]; then
