@@ -48,12 +48,12 @@ terminal = guess_terminal()
 
 keys = [
     # Switch between windows in current stack pane
-    #Key([mod], "w", lazy.layout.down()),
-    #Key([mod], "s", lazy.layout.up()),
+    #Key([mod], "j", lazy.layout.down()),
+    #Key([mod], "k", lazy.layout.up()),
 
     # Move windows up or down in current stack
-    #Key([mod, "control"], "w", lazy.layout.shuffle_down()),
-    #Key([mod, "control"], "s", lazy.layout.shuffle_up()),
+    #Key([mod, "control"], "j", lazy.layout.shuffle_down()),
+    #Key([mod, "control"], "k", lazy.layout.shuffle_up()),
 
     # Switch window focus to other pane(s) of stack
     Key([mod], "space", lazy.layout.next()),
@@ -77,27 +77,27 @@ keys = [
     Key([mod], "f", lazy.spawncmd()),
 
     ### Custom Keybinds for bsp layout ###
-    Key([mod], "s", lazy.layout.down()),
-    Key([mod], "w", lazy.layout.up()),
-    Key([mod], "a", lazy.layout.left()),
-    Key([mod], "d", lazy.layout.right()),
-    Key([mod, "shift"], "s", lazy.layout.shuffle_down()),
-    Key([mod, "shift"], "w", lazy.layout.shuffle_up()),
-    Key([mod, "shift"], "a", lazy.layout.shuffle_left()),
-    Key([mod, "shift"], "d", lazy.layout.shuffle_right()),
-    Key([mod, "mod1"], "s", lazy.layout.flip_down()),
-    Key([mod, "mod1"], "w", lazy.layout.flip_up()),
-    Key([mod, "mod1"], "a", lazy.layout.flip_left()),
-    Key([mod, "mod1"], "d", lazy.layout.flip_right()),
-    Key([mod, "control"], "s", lazy.layout.grow_down()),
-    Key([mod, "control"], "w", lazy.layout.grow_up()),
-    Key([mod, "control"], "a", lazy.layout.grow_left()),
-    Key([mod, "control"], "d", lazy.layout.grow_right()),
+    Key([mod], "j", lazy.layout.down()),
+    Key([mod], "k", lazy.layout.up()),
+    Key([mod], "h", lazy.layout.left()),
+    Key([mod], "l", lazy.layout.right()),
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
+    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
+    Key([mod, "mod1"], "j", lazy.layout.flip_down()),
+    Key([mod, "mod1"], "k", lazy.layout.flip_up()),
+    Key([mod, "mod1"], "h", lazy.layout.flip_left()),
+    Key([mod, "mod1"], "l", lazy.layout.flip_right()),
+    Key([mod, "control"], "j", lazy.layout.grow_down()),
+    Key([mod, "control"], "k", lazy.layout.grow_up()),
+    Key([mod, "control"], "h", lazy.layout.grow_left()),
+    Key([mod, "control"], "l", lazy.layout.grow_right()),
     Key([mod, "shift"], "n", lazy.layout.normalize()),
     Key([mod], "o", lazy.layout.maximize()),
     
     # Custom keybinds
-    Key([mod, "shift"], "f", lazy.spawn("rofi -show run -width 60 -theme ~/.cache/wal/colors-rofi-dark.rasi")),
+    Key([mod, "control"], "space", lazy.spawn("rofi -show run -width 60 -theme ~/.cache/wal/colors-rofi-dark.rasi")),
 
     # Change to other screen
     Key([mod], "u",      lazy.to_screen(0)),

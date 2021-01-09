@@ -1,2 +1,3 @@
 [Added Associations]
 application/zip=thunar.desktop;
+application/vsix=VSCodium.desktop;

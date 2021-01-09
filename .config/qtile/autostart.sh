@@ -1,3 +1,3 @@
 #!/bin/sh
-picom &
-wal -i ~/.wallpapers/ -q &
+picom --experimental-backend &
+dwall -p -s fuzzy &
