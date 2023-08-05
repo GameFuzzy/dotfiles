@@ -1,0 +1,54 @@
+# -- Layout settings --
+
+# default layout (can be bsp, stack or float)
+yabai -m config layout bsp
+
+# new window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+# padding set to 5px
+yabai -m config top_padding 5
+yabai -m config bottom_padding 5
+yabai -m config left_padding 5
+yabai -m config right_padding 5
+yabai -m config window_gap 5
+
+# -- Mouse settings --
+
+# make focus follow mouse
+yabai -m config focus_follows_mouse autofocus
+
+# modifier for clicking and dragging with mouse
+yabai -m config mouse_modifier hyper
+# set modifier + left-click drag to move window
+yabai -m config mouse_action1 move
+# set modifier + right-click drag to resize window
+yabai -m config mouse_action2 resize
+
+# when window is dropped in center of another window, swap them (on edges it will split it)
+yabai -m mouse_drop_action swap
+
+# -- Disable specific apps --
+yabai -m rule --add app="^(Calculator|System Preferences|System Settings|Archive Utility|Finder|Installer)$" manage=off
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add title="Software Update" manage=off
+yabai -m rule --add title="^Preview" manage=off # Anki card preview
+yabai -m rule --add title="^Preferences" manage=off
+yabai -m rule --add title="^Settings" manage=off
+yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^DaVinci Resolve$" manage=off
+yabai -m rule --add app="^Steam$" manage=off
+yabai -m rule --add app="^CrossOver$" manage=off
+yabai -m rule --add app="^Notes$" manage=off
+yabai -m rule --add app="^QuickTime Player$" manage=off
+yabai -m rule --add app="^League of Legends$" manage=off
+yabai -m rule --add app="^Numi$" manage=off
+yabai -m rule --add app="^Kawa$" manage=off
+yabai -m rule --add app="^Weather$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^JetBrains" manage=off
+yabai -m rule --add app="^Rectangle Pro$" manage=off
+yabai -m rule --add app="^Alfred Preferences$" manage=off
+yabai -m rule --add app="^ImageOptim$" manage=off
+yabai -m rule --add app="^mpv$" manage=off
+
