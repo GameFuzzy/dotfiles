@@ -1,15 +1,20 @@
 if status is-interactive
 pfetch
 starship init fish | source
-end
 
-alias vim "nvim"
 alias dev "cd ~/Developer"
-
+alias c "clear"
 if type -q exa
   alias ll "exa -l -g --icons"
   alias lla "ll -a"
-  alias cl "clear"
+end
+
+function last_history_item
+    echo $history[1]
+end
+abbr -a !! --position anywhere --function last_history_item
+abbr -a vim --position anywhere nvim
+
 end
 
 # >>> conda initialize >>>

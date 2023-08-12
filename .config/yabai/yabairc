@@ -15,8 +15,8 @@ yabai -m config window_gap 5
 
 # -- Mouse settings --
 
-# make focus follow mouse
-yabai -m config focus_follows_mouse autofocus
+# make focus follow mouse (too jank)
+# yabai -m config focus_follows_mouse autofocus
 
 # modifier for clicking and dragging with mouse
 yabai -m config mouse_modifier hyper
