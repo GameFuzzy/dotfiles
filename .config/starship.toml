@@ -1,5 +1,11 @@
-[aws]
-symbol = "  "
+[directory]
+read_only = " 󰌾"
+style = "cyan bold"
+
+[character]
+success_symbol = "[\uf054](green)" # 
+vicmd_symbol = "[\ue62b](green)" # 
+error_symbol = "[\uf467](red)" # 
 
 [buf]
 symbol = " "
@@ -13,9 +19,6 @@ symbol = " "
 [dart]
 symbol = " "
 
-[directory]
-read_only = " 󰌾"
-
 [docker_context]
 symbol = " "
 
@@ -24,12 +27,6 @@ symbol = " "
 
 [elm]
 symbol = " "
-
-[fossil_branch]
-symbol = " "
-
-[git_branch]
-symbol = " "
 
 [golang]
 symbol = " "
@@ -45,9 +42,6 @@ symbol = " "
 
 [hg_branch]
 symbol = " "
-
-[hostname]
-ssh_symbol = " "
 
 [java]
 symbol = " "
@@ -134,3 +128,29 @@ symbol = " "
 
 [scala]
 symbol = " "
+
+
+
+[username]
+disabled = true
+
+[hostname]
+disabled = true
+
+[aws]
+disabled = true
+
+[git_branch]
+disabled = true
+
+[git_commit]
+disabled = true
+
+[git_state]
+disabled = true
+
+[git_metrics]
+disabled = true
+
+[git_status]
+disabled = true

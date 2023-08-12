@@ -1,5 +1,14 @@
 # -- Layout settings --
 
+# label each space
+yabai -m space 1 --label main
+yabai -m space 2 --label browser
+yabai -m space 3 --label chat
+yabai -m space 4 --label mail
+yabai -m space 5 --label misc
+yabai -m space 6 --label misc
+yabai -m space 7 --label music
+
 # default layout (can be bsp, stack or float)
 yabai -m config layout bsp
 
