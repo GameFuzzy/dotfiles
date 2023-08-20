@@ -5,7 +5,7 @@ yabai -m space 1 --label main
 yabai -m space 2 --label browser
 yabai -m space 3 --label chat
 yabai -m space 4 --label mail
-yabai -m space 5 --label misc
+yabai -m space 5 --label notes
 yabai -m space 6 --label misc
 yabai -m space 7 --label music
 
@@ -60,4 +60,5 @@ yabai -m rule --add app="^Rectangle Pro$" manage=off
 yabai -m rule --add app="^Alfred Preferences$" manage=off
 yabai -m rule --add app="^ImageOptim$" manage=off
 yabai -m rule --add app="^mpv$" manage=off
+yabai -m rule --add app="^Cisco" manage=off
 
