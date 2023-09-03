@@ -20,7 +20,6 @@ hyper - y : yabai -m space --mirror y-axis
 
 # flip along x-axis
 hyper - x : yabai -m space --mirror x-axis
-
 # toggle window float
 hyper - w : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
@@ -69,6 +68,11 @@ shift + alt - 4 : yabai -m window --space 4;
 shift + alt - 5 : yabai -m window --space 5;
 shift + alt - 6 : yabai -m window --space 6;
 shift + alt - 7 : yabai -m window --space 7;
+
+# media controls for spotify
+play : spotify_player playback play-pause; 
+rewind : spotify_player playback previous; 
+fast : spotify_player playback next; 
 
 # -- Starting/Stopping/Restarting Yabai --
 

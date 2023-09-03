@@ -4,6 +4,7 @@ starship init fish | source
 
 alias dev "cd ~/Developer"
 alias c "clear"
+alias spt "spotify_player"
 if type -q exa
   alias ll "exa -l -g --icons"
   alias lla "ll -a"

@@ -64,4 +64,6 @@ yabai -m rule --add app="^Alfred Preferences$" manage=off
 yabai -m rule --add app="^ImageOptim$" manage=off
 yabai -m rule --add app="^mpv$" manage=off
 yabai -m rule --add app="^Cisco" manage=off
+yabai -m rule --add app="^Wacom" manage=off
+yabai -m rule --add app="^Messages$" manage=off
 
