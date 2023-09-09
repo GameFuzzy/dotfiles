@@ -10,6 +10,8 @@ local sources = {
 	formatting.goimports_reviser,
 	formatting.clang_format,
 	formatting.rustfmt,
+	formatting.latexindent,
+	formatting.bibclean,
 
 	lint.cpplint.with({
 		args = { "--filter='-legal/copyright'", "$FILENAME" },
@@ -17,6 +19,7 @@ local sources = {
 	lint.cppcheck,
 	lint.shellcheck,
 	lint.fish,
+	lint.textidote, -- LaTeX and Markdown linter
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

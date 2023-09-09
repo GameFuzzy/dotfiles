@@ -882,6 +882,10 @@ key_bindings:
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
 
+  # Unbind defaults
+  - { key: N, mods: Command, action: ReceiveChar }
+  # ---------------
+
   - { key: E, mods: Command, chars: "\x00\"" } # split tmux window vertically
   - { key: E, mods: Command|Shift, chars: "\x00%" } # split tmux window horizontally
   - { key: F, mods: Command, chars: "lfcd\n" } # open file manager 'gokcehan/lf'

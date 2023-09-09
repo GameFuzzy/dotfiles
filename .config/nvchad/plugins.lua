@@ -8,6 +8,13 @@ local plugins = {
 		enabled = false,
 	},
 	{
+		"lervag/vimtex",
+		lazy = false,
+		init = function()
+			vim.g.vimtex_view_method = "skim"
+		end,
+	},
+	{
 		"christoomey/vim-tmux-navigator",
 		lazy = false,
 	},
@@ -74,6 +81,7 @@ local plugins = {
 				"stylua",
 				"rust-analyzer",
 				"gopls",
+				"codelldb",
 			},
 		},
 	},
@@ -165,6 +173,7 @@ local plugins = {
 		"mfussenegger/nvim-dap",
 		init = function()
 			require("core.utils").load_mappings("dap")
+			require("custom.configs.nvim-dap")
 		end,
 	},
 	{

@@ -1,6 +1,10 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
+local extension_path = vim.env.HOME .. "/.local/share/nvim/mason/packages/codelldb/extension/"
+local codelldb_path = extension_path .. "adapter/codelldb"
+local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
+
 local options = {
 	server = {
 		on_attach = on_attach,
@@ -19,6 +23,9 @@ local options = {
 				},
 			},
 		},
+	},
+	dap = {
+		adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
 	},
 }
 
