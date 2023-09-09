@@ -1,4 +1,5 @@
 if status is-interactive
+fish_vi_key_bindings # Enable vi bindings by default
 pfetch
 starship init fish | source
 
