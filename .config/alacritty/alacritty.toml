@@ -1,0 +1,187 @@
+import = ["/Users/fuzzy/.config/alacritty/themes/themes/solarized_dark.toml"]
+
+[cursor.style]
+blinking = "On"
+
+[font]
+size = 20.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+[[keyboard.bindings]]
+action = "ReceiveChar"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000\""
+key = "E"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000%"
+key = "E"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = """
+lfcd
+"""
+key = "F"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000[/"
+key = "F"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0000g"
+key = "G"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000T"
+key = "S"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000L"
+key = "P"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000u"
+key = "O"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = """
+:q
+"""
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000c"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000x"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000z"
+key = "Z"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000n"
+key = "Tab"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0000p"
+key = "Period"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0000,"
+key = "Comma"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000p"
+key = "LBracket"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000n"
+key = "RBracket"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000:"
+key = "Semicolon"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00001"
+key = "Key1"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00002"
+key = "Key2"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00003"
+key = "Key3"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00004"
+key = "Key4"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00005"
+key = "Key5"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00006"
+key = "Key6"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00007"
+key = "Key7"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00008"
+key = "Key8"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00009"
+key = "Key9"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\b"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = """
+
+"""
+key = "J"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u000B"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mods = "Command"
+
+[shell]
+program = "/opt/homebrew/bin/fish"
+
+[window]
+decorations = "buttonless"
+opacity = 0.9
+
+[window.padding]
+x = 5
+y = 5
