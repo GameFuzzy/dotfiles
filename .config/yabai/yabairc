@@ -6,8 +6,10 @@ yabai -m space 2 --label browser
 yabai -m space 3 --label chat
 yabai -m space 4 --label mail
 yabai -m space 5 --label notes
-yabai -m space 6 --label misc
+yabai -m space 6 --label calendar
 yabai -m space 7 --label music
+yabai -m space 8 --label anki
+yabai -m space 9 --label misc
 
 # default layout (can be bsp, stack or float)
 yabai -m config layout bsp
@@ -25,17 +27,13 @@ yabai -m config window_gap 5
 # -- Mouse settings --
 
 # make focus follow mouse (too jank)
-# yabai -m config focus_follows_mouse autofocus
+yabai -m config focus_follows_mouse autoraise
 
 # make mouse follow focus (doesn't work across multiple monitors)
 # yabai -m config mouse_follows_focus on
 
 # modifier for clicking and dragging with mouse
-yabai -m config mouse_modifier hyper
-# set modifier + left-click drag to move window
-yabai -m config mouse_action1 move
-# set modifier + right-click drag to resize window
-yabai -m config mouse_action2 resize
+yabai -m config mouse_modifier cmd
 
 # when window is dropped in center of another window, swap them (on edges it will split it)
 yabai -m mouse_drop_action swap
@@ -66,4 +64,11 @@ yabai -m rule --add app="^mpv$" manage=off
 yabai -m rule --add app="^Cisco" manage=off
 yabai -m rule --add app="^Wacom" manage=off
 yabai -m rule --add app="^Messages$" manage=off
+yabai -m rule --add app="^Godot$" manage=off
+yabai -m rule --add app="^Cold Turkey Blocker" manage=off
+yabai -m rule --add app="^Simulator$" manage=off
+yabai -m rule --add app="^Speedtest$" manage=off
+yabai -m rule --add app="^Bitwarden$" manage=off
 
+# Should be at end of config
+borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &

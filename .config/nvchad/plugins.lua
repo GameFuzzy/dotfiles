@@ -15,6 +15,13 @@ local plugins = {
 		end,
 	},
 	{
+		"iamcco/markdown-preview.nvim",
+		ft = "markdown",
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
+	{
 		"christoomey/vim-tmux-navigator",
 		lazy = false,
 	},
@@ -177,11 +184,27 @@ local plugins = {
 		end,
 	},
 	{
+		"rcarriga/nvim-dap-ui",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+		},
+		config = function(_, opts)
+			require("dapui").setup()
+		end,
+	},
+	{
 		"theHamsta/nvim-dap-virtual-text",
 		lazy = false,
 		config = function(_, opts)
 			require("nvim-dap-virtual-text").setup()
 		end,
+	},
+	{
+		"dhruvasagar/vim-table-mode",
+		ft = "markdown",
+		keys = {
+			{ "<leader>tm", "<cmd>TableModeToggle<cr>", desc = "Table mode toggle" },
+		},
 	},
 }
 return plugins

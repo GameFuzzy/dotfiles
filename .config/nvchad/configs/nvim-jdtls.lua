@@ -44,7 +44,7 @@ local on_attach = function(_, bufnr)
 end
 
 local config = {
-	cmd = { "/opt/homebrew/Cellar/jdtls/1.26.0/bin/jdtls" },
+	cmd = { "/opt/homebrew/bin/jdtls" },
 	root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
 	on_attach = on_attach,
 }

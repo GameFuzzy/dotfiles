@@ -13,10 +13,6 @@ local sources = {
 	formatting.latexindent,
 	formatting.bibclean,
 
-	lint.cpplint.with({
-		args = { "--filter='-legal/copyright'", "$FILENAME" },
-	}),
-	lint.cppcheck,
 	lint.shellcheck,
 	lint.fish,
 	lint.textidote, -- LaTeX and Markdown linter

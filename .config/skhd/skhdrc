@@ -8,7 +8,7 @@ hyper - l : yabai -m window --focus east
 
 # change focus between external displays (left and right)
 hyper - s: yabai -m display --focus west
-hyper - g: yabai -m display --focus east
+hyper - d: yabai -m display --focus east
 
 # -- Modifying the Layout --
 
@@ -53,7 +53,7 @@ shift + alt - l : yabai -m window --warp east
 
 # move window to display left and right
 alt - s : yabai -m window --display west; yabai -m display --focus west;
-alt - g : yabai -m window --display east; yabai -m display --focus east;
+alt - d : yabai -m window --display east; yabai -m display --focus east;
 
 
 # move window to prev and next space
@@ -69,11 +69,6 @@ shift + alt - 5 : yabai -m window --space 5;
 shift + alt - 6 : yabai -m window --space 6;
 shift + alt - 7 : yabai -m window --space 7;
 
-# media controls for spotify
-play : spotify_player playback play-pause; 
-rewind : spotify_player playback previous; 
-fast : spotify_player playback next; 
-
 # -- Starting/Stopping/Restarting Yabai --
 
 # stop/start/restart yabai
@@ -82,4 +77,6 @@ ctrl + alt - s : yabai --start-service
 ctrl + alt - r : yabai --restart-service
 
 # -- Spawning applications --
-hyper - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+hyper - return : wezterm
+hyper - m : wezterm start -- spotify_player
+

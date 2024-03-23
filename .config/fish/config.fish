@@ -11,6 +11,21 @@ if type -q exa
   alias lla "ll -a"
 end
 
+# C++ 
+alias mkfcpp "makefile-cpp"
+alias gencppdb "make clean; bear -- make; mv compile_commands.json ../"
+
+# Java
+alias junit-get "curl -L https://search.maven.org/remotecontent\?filepath=junit/junit/4.12/junit-4.12.jar -o junit-4.12.jar; curl -L https://search.maven.org/remotecontent\?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar -o hamcrest-core-1.3.jar"
+alias junitc-all "javac -cp '.:hamcrest-core-1.3.jar:junit-4.12.jar' *.java"
+alias junit-run "java -cp '.:hamcrest-core-1.3.jar:junit-4.12.jar' org.junit.runner.JUnitCore"
+
+alias bibc "bibclean -align-equals -delete-empty-values refs.bib"
+
+alias mokuro-all "mokuro --parent_dir"
+
+set -x LC_CTYPE en_US.UTF-8
+
 function last_history_item
     echo $history[1]
 end
