@@ -23,8 +23,8 @@ return {
         fish = { 'fish_indent' },
         c = { 'clang_format' },
         cpp = { 'clang_format' },
-        latex = { 'latexindent' },
-        bibtex = { 'bibtex-tidy' },
+        tex = { 'latexindent' },
+        bib = { 'bibtex-tidy' },
 
         ['*'] = { 'codespell' },
         ['_'] = { 'trim_whitespace' },

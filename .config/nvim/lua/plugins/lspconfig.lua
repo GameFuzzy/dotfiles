@@ -30,22 +30,17 @@ return {
       --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
       --    function will be executed to configure the current buffer
       vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
+        group = vim.api.nvim_create_augroup('UserLspConfig', { clear = true }),
         callback = function(event)
-          -- NOTE: Remember that Lua is a real programming language, and as such it is possible
-          -- to define small helper and utility functions so you don't have to repeat yourself.
-          --
-          -- In this case, we create a function that lets us more easily define mappings specific
-          -- for LSP related items. It sets the mode, buffer and description for us each time.
           local map = function(keys, func, desc)
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
+          local client = vim.lsp.get_client_by_id(event.data.client_id)
 
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
           map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-
           -- Find references for the word under your cursor.
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 
@@ -72,7 +67,15 @@ return {
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-          map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+          local code_action = function()
+            vim.lsp.buf.code_action()
+          end
+          if client.name == 'rust-analyzer' then -- Make exception for Rust
+            code_action = function()
+              vim.cmd.RustLsp 'codeAction' -- supports rust-analyzer's grouping
+            end
+          end
+          map('<leader>ca', code_action, '[C]ode [A]ction')
 
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap.
@@ -87,7 +90,6 @@ return {
           --    See `:help CursorHold` for information about when this is executed
           --
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
-          local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.server_capabilities.documentHighlightProvider then
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
@@ -122,7 +124,7 @@ return {
         clangd = {},
         gopls = {},
         pyright = {},
-        rust_analyzer = {},
+        zls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -161,13 +163,17 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'codespell', -- Spelling mistakes
+        'prettier', -- General-purpose formatter
         'stylua', -- Used to format Lua code
         'black', -- Used to format Python code
         'isort', -- Used to format Python imports
         'goimports', -- Used to format Go imports
-        'prettier', -- Used to format JS and shit
         'latexindent', -- Used to format LaTeX
         'bibtex-tidy', -- Used to format BibTeX
+        'codelldb', -- General-purpose debugger
+        'jdtls', -- Language server for Java
+        'java-debug-adapter', -- Debug adapter for Java
+        'java-test', -- Works with java-debug-adapter to provide support for debugging tests
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

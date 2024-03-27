@@ -5,8 +5,9 @@ if status is-interactive
 
     alias conf "cd ~/.config; nvim"
     alias dev "cd ~/Developer"
-    alias c clear
-    alias . "nvim ."
+    abbr -a c clear
+    abbr -a . "nvim ."
+    alias ly 'lazygit --use-config-file "$HOME/.config/yadm/lazygit.yml,$HOME/Library/Application Support/lazygit/config.yml" --work-tree ~ --git-dir ~/.local/share/yadm/repo.git'
 
     alias nvim-old 'NVIM_APPNAME="nvim.bak" nvim'
 

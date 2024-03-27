@@ -19,4 +19,9 @@ return {
     'dhruvasagar/vim-table-mode',
     ft = 'markdown',
   },
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^4',
+    ft = { 'rust' },
+  },
 }

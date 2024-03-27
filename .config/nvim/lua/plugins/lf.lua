@@ -1,5 +1,5 @@
 return {
-  { -- Simple file manager
+  { -- Simple file manager with vim motions
     'lmburns/lf.nvim',
     lazy = false,
     dependencies = { 'akinsho/toggleterm.nvim', version = '*', config = true }, -- Runs require("toggleterm").setup()
