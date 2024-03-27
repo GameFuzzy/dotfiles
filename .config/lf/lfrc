@@ -4,5 +4,36 @@ set number
 set relativenumber
 set shell fish
 set promptfmt "\033[34;1m%d\033[0m\033[1m%f\033[0m"
+
+map x delete
+
+# https://github.com/gokcehan/lf/wiki/Tips#creating-new-files
 map a %lf-mkfile
+
+# https://github.com/gokcehan/lf/wiki/Tips#commandmapping-to-create-new-directories
 map D %lf-mkdir
+
+# https://github.com/gokcehan/lf/wiki/Tips#enhancing-the-rename-command
+# unmap the default rename keybinding
+map r
+
+map i rename
+map I :rename; cmd-home
+map A :rename; cmd-end
+map c :rename; cmd-delete-home
+map C :rename; cmd-end; cmd-delete-home
+
+# https://github.com/gokcehan/lf/wiki/Tips#follow-symlinks
+cmd follow_link %{{
+  lf -remote "send ${id} select '$(readlink $f)'"
+}}
+map gL follow_link
+
+# https://github.com/gokcehan/lf/wiki/Tips#move-updown-in-the-parent-directory
+cmd move-parent &{{
+    dironly="setlocal '$(dirname "$PWD")' dironly"
+    lf -remote "send $id :updir; $dironly true; $1; $dironly false; open"
+}}
+
+map J move-parent down
+map K move-parent up

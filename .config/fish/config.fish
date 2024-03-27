@@ -1,43 +1,47 @@
 if status is-interactive
-fish_vi_key_bindings # Enable vi bindings by default
-pfetch
-starship init fish | source
+    fish_vi_key_bindings # Enable vi bindings by default
+    pfetch
+    starship init fish | source
 
-alias dev "cd ~/Developer"
-alias c "clear"
-alias spt "spotify_player"
-if type -q exa
-  alias ll "exa -l -g --icons"
-  alias lla "ll -a"
-end
+    alias conf "cd ~/.config; nvim"
+    alias dev "cd ~/Developer"
+    alias c clear
+    alias . "nvim ."
 
-# C++ 
-alias mkfcpp "makefile-cpp"
-alias gencppdb "make clean; bear -- make; mv compile_commands.json ../"
+    alias nvim-old 'NVIM_APPNAME="nvim.bak" nvim'
 
-# Java
-alias junit-get "curl -L https://search.maven.org/remotecontent\?filepath=junit/junit/4.12/junit-4.12.jar -o junit-4.12.jar; curl -L https://search.maven.org/remotecontent\?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar -o hamcrest-core-1.3.jar"
-alias junitc-all "javac -cp '.:hamcrest-core-1.3.jar:junit-4.12.jar' *.java"
-alias junit-run "java -cp '.:hamcrest-core-1.3.jar:junit-4.12.jar' org.junit.runner.JUnitCore"
+    if type -q exa
+        alias ll "exa -l -g --icons"
+        alias lla "ll -a"
+    end
 
-alias bibc "bibclean -align-equals -delete-empty-values refs.bib"
+    # C++ 
+    alias mkfcpp makefile-cpp
+    alias gencppdb "make clean; bear -- make; mv compile_commands.json ../"
 
-alias mokuro-all "mokuro --parent_dir"
+    # Java
+    alias junit-get "curl -L https://search.maven.org/remotecontent\?filepath=junit/junit/4.12/junit-4.12.jar -o junit-4.12.jar; curl -L https://search.maven.org/remotecontent\?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar -o hamcrest-core-1.3.jar"
+    alias junitc-all "javac -cp '.:hamcrest-core-1.3.jar:junit-4.12.jar' *.java"
+    alias junit-run "java -cp '.:hamcrest-core-1.3.jar:junit-4.12.jar' org.junit.runner.JUnitCore"
 
-set -x LC_CTYPE en_US.UTF-8
+    alias bibc "bibclean -align-equals -delete-empty-values refs.bib"
 
-function last_history_item
-    echo $history[1]
-end
-abbr -a !! --position anywhere --function last_history_item
-abbr -a vim --position anywhere nvim
+    alias mokuro-all "mokuro --parent_dir"
+
+    set -x LC_CTYPE en_US.UTF-8
+
+    function last_history_item
+        echo $history[1]
+    end
+    abbr -a !! --position anywhere --function last_history_item
+    abbr -a vim --position anywhere nvim
 
 end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /opt/homebrew/Caskroom/miniconda/base/bin/conda
-    eval /opt/homebrew/Caskroom/miniconda/base/bin/conda "shell.fish" "hook" $argv | source
+    eval /opt/homebrew/Caskroom/miniconda/base/bin/conda "shell.fish" hook $argv | source
 end
 # <<< conda initialize <<<
 

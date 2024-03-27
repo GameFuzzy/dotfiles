@@ -4,7 +4,8 @@ local act = wezterm.action
 local config = {}
 
 config.font_size = 20
-config.color_scheme = "Solarized Dark (Gogh)"
+config.color_scheme_dirs = { "$HOME/.config/wezterm/colors/" }
+config.color_scheme = "Selenized Dark"
 config.window_background_opacity = 0.9
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
@@ -47,10 +48,40 @@ config.keys = {
 	{ key = "7", mods = "CMD", action = act.SendString("\x007") }, --                ... 7
 	{ key = "8", mods = "CMD", action = act.SendString("\x008") }, --                ... 8
 	{ key = "9", mods = "CMD", action = act.SendString("\x009") }, --                ... 9
-	{ key = "h", mods = "CMD", action = act.SendString("\x08") }, -- vim bindings for switching between panes
-	{ key = "j", mods = "CMD", action = act.SendString("\x0a") }, -- ...
-	{ key = "k", mods = "CMD", action = act.SendString("\x0b") }, -- ...
-	{ key = "l", mods = "CMD", action = act.SendString("\x0c") }, -- ...
+
+	-- vim bindings for switching between panes
+	{
+		key = "h",
+		mods = "CMD",
+		action = act.Multiple({
+			act.SendKey({ key = "w", mods = "CTRL" }),
+			act.SendKey({ key = "h", mods = "CTRL" }),
+		}),
+	},
+	{
+		key = "j",
+		mods = "CMD",
+		action = act.Multiple({
+			act.SendKey({ key = "w", mods = "CTRL" }),
+			act.SendKey({ key = "j", mods = "CTRL" }),
+		}),
+	},
+	{
+		key = "k",
+		mods = "CMD",
+		action = act.Multiple({
+			act.SendKey({ key = "w", mods = "CTRL" }),
+			act.SendKey({ key = "k", mods = "CTRL" }),
+		}),
+	},
+	{
+		key = "l",
+		mods = "CMD",
+		action = act.Multiple({
+			act.SendKey({ key = "w", mods = "CTRL" }),
+			act.SendKey({ key = "l", mods = "CTRL" }),
+		}),
+	},
 }
 
 return config
