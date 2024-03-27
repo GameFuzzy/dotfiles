@@ -1,8 +1,7 @@
 return {
-  { -- Simple file explorer
+  { -- Simple file manager
     'lmburns/lf.nvim',
     lazy = false,
-    cmd = 'Lf',
     dependencies = { 'akinsho/toggleterm.nvim', version = '*', config = true }, -- Runs require("toggleterm").setup()
     config = function()
       -- This feature will not work if the plugin is lazy-loaded
@@ -22,8 +21,9 @@ return {
         end,
       })
     end,
+    cmd = 'Lf',
     keys = {
-      { '<leader>lf', '<cmd>Lf<cr>', desc = 'lf' },
+      { '<leader>lf', '<cmd>Lf<cr>', desc = 'lf - File Manager' },
     },
   },
 }
