@@ -3,16 +3,8 @@ return {
   { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
   {
     'lervag/vimtex',
-    lazy = false,
     init = function()
       vim.g.vimtex_view_method = 'skim'
-    end,
-  },
-  {
-    'iamcco/markdown-preview.nvim',
-    ft = 'markdown',
-    build = function()
-      vim.fn['mkdp#util#install']()
     end,
   },
   {

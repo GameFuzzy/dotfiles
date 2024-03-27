@@ -164,6 +164,7 @@ return {
       vim.list_extend(ensure_installed, {
         'codespell', -- Spelling mistakes
         'prettier', -- General-purpose formatter
+        'markdownlint', -- Used to format Markdown
         'stylua', -- Used to format Lua code
         'black', -- Used to format Python code
         'isort', -- Used to format Python imports
