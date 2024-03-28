@@ -28,7 +28,44 @@ return {
 
       -- You can provide additional configuration to the handlers,
       -- see mason-nvim-dap README for more information
-      handlers = {},
+      handlers = {
+        codelldb = function(config)
+          local pickers = require 'telescope.pickers'
+          local finders = require 'telescope.finders'
+          local conf = require('telescope.config').values
+          local actions = require 'telescope.actions'
+          local action_state = require 'telescope.actions.state'
+
+          config.configurations = {
+            {
+              name = 'Launch an executable',
+              type = 'executable',
+              request = 'launch',
+              cwd = '${workspaceFolder}',
+              program = function()
+                return coroutine.create(function(coro)
+                  local opts = {}
+                  pickers
+                    .new(opts, {
+                      prompt_title = 'Path to executable',
+                      finder = finders.new_oneshot_job({ 'fd', '--hidden', '--no-ignore', '--type', 'x' }, {}),
+                      sorter = conf.generic_sorter(opts),
+                      attach_mappings = function(buffer_number)
+                        actions.select_default:replace(function()
+                          actions.close(buffer_number)
+                          coroutine.resume(coro, action_state.get_selected_entry()[1])
+                        end)
+                        return true
+                      end,
+                    })
+                    :find()
+                end)
+              end,
+            },
+          }
+          require('mason-nvim-dap').default_setup(config) -- don't forget this!
+        end,
+      },
 
       ensure_installed = {
         'codelldb', -- General-purpose debugger
@@ -39,17 +76,27 @@ return {
     }
 
     -- Basic debugging keymaps
+
+    local continue = function()
+      -- Load launch.json if it exists
+      if vim.fn.filereadable '.vscode/launch.json' then
+        require('dap.ext.vscode').load_launchjs()
+      end
+      require('dap').continue()
+    end
+
     vim.keymap.set('n', '<F5>', function()
       if vim.bo.filetype == 'java' then
         require('jdtls.dap').setup_dap_main_class_configs {
           on_ready = function()
-            require('dap').continue()
+            continue()
           end,
         }
       else
-        require('dap').continue()
+        continue()
       end
     end, { desc = 'Debug: Start/Continue' })
+
     vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
     vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
     vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
