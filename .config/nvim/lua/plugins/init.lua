@@ -1,5 +1,6 @@
 return {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-fugitive', -- Git commands
   { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
   {
     'lervag/vimtex',

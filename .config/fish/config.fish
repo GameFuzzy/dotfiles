@@ -8,6 +8,7 @@ if status is-interactive
     abbr -a c clear
     abbr -a . "nvim ."
     alias ly 'lazygit --use-config-file "$HOME/.config/yadm/lazygit.yml,$HOME/Library/Application Support/lazygit/config.yml" --work-tree ~ --git-dir ~/.local/share/yadm/repo.git'
+    abbr -a tmux-new 'tmux new -s main'
 
     alias nvim-old 'NVIM_APPNAME="nvim.bak" nvim'
 

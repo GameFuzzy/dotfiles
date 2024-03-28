@@ -121,11 +121,7 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {},
-        gopls = {},
-        pyright = {},
-        zls = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
+        -- See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
@@ -133,11 +129,11 @@ return {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
-
+        clangd = {},
+        gopls = {},
+        pyright = {},
+        zls = {},
         lua_ls = {
-          -- cmd = {...},
-          -- filetypes = { ...},
-          -- capabilities = {},
           settings = {
             Lua = {
               completion = {
@@ -147,6 +143,9 @@ return {
               diagnostics = { disable = { 'missing-fields' } },
             },
           },
+        },
+        jdtls = {
+          autostart = false, -- Should be handled by nvim-jdtls
         },
       }
 
@@ -171,10 +170,7 @@ return {
         'goimports', -- Used to format Go imports
         'latexindent', -- Used to format LaTeX
         'bibtex-tidy', -- Used to format BibTeX
-        'codelldb', -- General-purpose debugger
         'jdtls', -- Language server for Java
-        'java-debug-adapter', -- Debug adapter for Java
-        'java-test', -- Works with java-debug-adapter to provide support for debugging tests
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
