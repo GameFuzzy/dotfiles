@@ -82,6 +82,40 @@ config.keys = {
 			act.SendKey({ key = "l", mods = "CTRL" }),
 		}),
 	},
+
+	-- Resizing panes
+	{
+		key = "h",
+		mods = "CMD|SHIFT",
+		action = act.Multiple({
+			act.SendKey({ key = "w", mods = "CTRL" }),
+			act.SendKey({ key = "<", mods = "CTRL" }),
+		}),
+	},
+	{
+		key = "j",
+		mods = "CMD|SHIFT",
+		action = act.Multiple({
+			act.SendKey({ key = "w", mods = "CTRL" }),
+			act.SendKey({ key = "-", mods = "CTRL" }),
+		}),
+	},
+	{
+		key = "k",
+		mods = "CMD|SHIFT",
+		action = act.Multiple({
+			act.SendKey({ key = "w", mods = "CTRL" }),
+			act.SendKey({ key = "+", mods = "CTRL" }),
+		}),
+	},
+	{
+		key = "l",
+		mods = "CMD|SHIFT",
+		action = act.Multiple({
+			act.SendKey({ key = "w", mods = "CTRL" }),
+			act.SendKey({ key = ">", mods = "CTRL" }),
+		}),
+	},
 }
 
 return config
