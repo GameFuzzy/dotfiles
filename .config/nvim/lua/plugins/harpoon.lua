@@ -22,7 +22,7 @@ return {
         function()
           require('harpoon'):list():append()
         end,
-        desc = 'Add buffer to harpoon list',
+        desc = '[A]dd buffer to harpoon list',
       },
 
       {

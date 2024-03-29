@@ -4,6 +4,7 @@ if status is-interactive
     starship init fish | source
 
     alias conf "cd ~/.config; nvim"
+    abbr -a source_fish "source ~/.config/fish/config.fish"
     alias dev "cd ~/Developer"
     abbr -a c clear
     abbr -a . "nvim ."
@@ -13,7 +14,7 @@ if status is-interactive
     alias nvim-old 'NVIM_APPNAME="nvim.bak" nvim'
 
     if type -q exa
-        alias ll "exa -l -g --icons"
+        alias ll "eza -l -g --icons"
         alias lla "ll -a"
     end
 

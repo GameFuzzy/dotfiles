@@ -10,7 +10,7 @@ return { -- Allows previewing Markdown files in a browser
       vim.g.mkdp_browser = 'Firefox'
     end,
     keys = {
-      { '<leader>p', '<cmd>MarkdownPreviewToggle<cr>', desc = 'Preview Markdown' },
+      { '<leader>M', '<cmd>MarkdownPreviewToggle<cr>', desc = 'Preview [M]arkdown' },
     },
   },
 }
