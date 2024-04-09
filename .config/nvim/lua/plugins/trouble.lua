@@ -2,6 +2,7 @@ return {
   {
     'folke/trouble.nvim',
     branch = 'dev',
+    dev = false,
     keys = {
       {
         '<leader>tx',
@@ -24,12 +25,12 @@ return {
         desc = 'LSP Definitions / references (Trouble)',
       },
       {
-        '<leader>tl',
+        '<leader>l',
         '<cmd>Trouble loclist toggle<cr>',
         desc = 'Location List (Trouble)',
       },
       {
-        '<leader>tq',
+        '<leader>q',
         '<cmd>Trouble qflist toggle<cr>',
         desc = 'Quickfix List (Trouble)',
       },

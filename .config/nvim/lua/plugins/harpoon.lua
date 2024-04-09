@@ -20,7 +20,7 @@ return {
       {
         '<leader>a',
         function()
-          require('harpoon'):list():append()
+          require('harpoon'):list():add()
         end,
         desc = '[A]dd buffer to harpoon list',
       },

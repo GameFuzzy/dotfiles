@@ -1,0 +1,3 @@
+[submodule ".qutebrowser/themes/selenized-qutebrowser"]
+	path = .qutebrowser/themes/selenized-qutebrowser
+	url = https://gitlab.com/lovetocode999/selenized-qutebrowser.git

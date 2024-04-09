@@ -13,7 +13,9 @@ return {
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>l'] = { name = '[L]ist', _ = 'which_key_ignore' },
-        ['<leader>t'] = { name = '[T]rouble', _ = 'which_key_ignore' },
+        ['<leader>t'] = { name = '[T]est / [T]rouble', _ = 'which_key_ignore' },
+        ['<leader>n'] = { name = '[N]eogen', _ = 'which_key_ignore' },
+        ['<leader>f'] = { name = '[F]ormat', _ = 'which_key_ignore' },
       }
     end,
   },

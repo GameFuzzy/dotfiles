@@ -36,8 +36,8 @@ config.keys = {
 	{ key = "Tab", mods = "CTRL", action = act.SendString("\x00n") }, -- switch to next tmux window
 	{ key = ".", mods = "CTRL", action = act.SendString("\x00p") }, -- switch to previous tmux window
 	{ key = ",", mods = "CMD", action = act.SendString("\x00,") }, -- rename the current tmux window
-	{ key = "[", mods = "CMD", action = act.SendString("\x00p") }, -- switch to next tmux window
-	{ key = "]", mods = "CMD", action = act.SendString("\x00n") }, -- switch to previous tmux window
+	{ key = "[", mods = "CMD", action = act.SendString("\x00p") }, -- switch to previous tmux window
+	{ key = "]", mods = "CMD", action = act.SendString("\x00n") }, -- switch to next tmux window
 	{ key = ";", mods = "CMD", action = act.SendString("\x00:") }, -- enter the tmux command prompt
 	{ key = "1", mods = "CMD", action = act.SendString("\x001") }, -- select tmux window 1
 	{ key = "2", mods = "CMD", action = act.SendString("\x002") }, --                ... 2

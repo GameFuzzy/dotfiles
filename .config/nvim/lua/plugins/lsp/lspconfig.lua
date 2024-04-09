@@ -127,8 +127,7 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
-        --
+        tsserver = {},
         clangd = {},
         gopls = {},
         pyright = {},
@@ -161,9 +160,10 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'codespell', -- Spelling mistakes
+        'cspell', -- Linter for spelling mistakes in code
+        'vale', -- Linter for prose
+        'markdownlint', -- Linter for markdown
         'prettier', -- General-purpose formatter
-        'markdownlint', -- Used to format Markdown
         'stylua', -- Used to format Lua code
         'black', -- Used to format Python code
         'isort', -- Used to format Python imports

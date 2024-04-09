@@ -5,22 +5,17 @@ return {
   { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
   {
     'lervag/vimtex',
+    lazy = false, -- Do not lazy load
     init = function()
       vim.g.vimtex_view_method = 'skim'
+      -- vim.g.vimtex_grammar_textidote = {
+      --   jar = '/usr/local/bin/textidote.jar',
+      --   args = '--check en',
+      -- }
     end,
   },
   {
     'dhruvasagar/vim-table-mode',
     ft = 'markdown',
-  },
-  {
-    'mrcjkb/rustaceanvim',
-    version = '^4',
-    ft = { 'rust' },
-    init = function()
-      vim.g.rustaceanvim = {
-        dap = { autoload_configurations = true },
-      }
-    end,
   },
 }

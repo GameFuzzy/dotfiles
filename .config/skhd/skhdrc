@@ -68,6 +68,8 @@ shift + alt - 4 : yabai -m window --space 4;
 shift + alt - 5 : yabai -m window --space 5;
 shift + alt - 6 : yabai -m window --space 6;
 shift + alt - 7 : yabai -m window --space 7;
+shift + alt - 8 : yabai -m window --space 8;
+shift + alt - 9 : yabai -m window --space 9;
 
 # -- Starting/Stopping/Restarting Yabai --
 
@@ -77,6 +79,6 @@ ctrl + alt - s : yabai --start-service
 ctrl + alt - r : yabai --restart-service
 
 # -- Spawning applications --
-hyper - return : wezterm
-hyper - m : wezterm start -- spotify_player
-
+hyper - return : wezterm start --always-new-process
+hyper - m : wezterm start --always-new-process -- spotify_player
+cmd + shift - return : qtb

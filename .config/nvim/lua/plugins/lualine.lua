@@ -9,9 +9,12 @@ return {
         groups = {},
         title = false,
         filter = { range = true },
-        format = '{kind_icon}{symbol.name:Normal}',
+        format = '{kind_icon}{symbol.name}',
       }
       return {
+        options = {
+          theme = 'auto',
+        },
         sections = {
           lualine_b = { 'diff', 'diagnostics' },
           lualine_c = { 'filename', { symbols.get, cond = symbols.has } },
