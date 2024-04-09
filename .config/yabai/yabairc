@@ -59,7 +59,7 @@ yabai -m rule --add app="^JetBrains" manage=off
 yabai -m rule --add app="^Rectangle Pro$" manage=off
 yabai -m rule --add app="^Alfred Preferences$" manage=off
 yabai -m rule --add app="^ImageOptim$" manage=off
-# yabai -m rule --add app="^mpv$" manage=off
+yabai -m rule --add app="^mpv$" manage=off
 yabai -m rule --add app="^Cisco" manage=off
 yabai -m rule --add app="^Wacom" manage=off
 yabai -m rule --add app="^Messages$" manage=off
@@ -69,6 +69,8 @@ yabai -m rule --add app="^Simulator$" manage=off
 yabai -m rule --add app="^Speedtest$" manage=off
 yabai -m rule --add app="^Firefox$" title="^Extension: " manage=off
 yabai -m rule --add app="^Safari$" title="^Bitwarden$" manage=off
+
+yabai -m rule --add app="^qutebrowser$" title!="^$" role="AXWindow" subrole="AXDialog" manage=on
 
 # add 20 padding to the top and 0 padding to the bottom of every space located on the main display
 yabai -m config external_bar all:40:0
