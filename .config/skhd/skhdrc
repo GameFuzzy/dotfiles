@@ -81,4 +81,4 @@ ctrl + alt - r : yabai --restart-service
 # -- Spawning applications --
 hyper - return : wezterm start --always-new-process
 hyper - m : wezterm start --always-new-process -- spotify_player
-cmd + shift - return : qtb
+cmd + shift - return : vieb

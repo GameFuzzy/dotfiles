@@ -15,6 +15,10 @@ c.window.hide_decoration = True
 c.fonts.default_size = "15pt"
 c.colors.webpage.preferred_color_scheme = "dark"
 
+## Tab bar
+c.tabs.show = "switching"
+c.tabs.position = "left"
+
 ## Keybindings
 config.bind(",m", "spawn mpv {url}")
 config.bind("pa", "spawn --userscript bitwarden --totp")
@@ -24,6 +28,9 @@ config.bind("pk", "spawn --userscript bitwarden --totp --password-only")
 ## Set theme
 sys.path.append(os.path.join(sys.path[0], "selenized-qutebrowser"))
 config.source("themes/selenized-qutebrowser/qutebrowser.py")
+
+## Enable copy to clipboard buttons
+config.set("content.javascript.clipboard", "access", "github.com")
 
 ## This should not be necessary...
 config.set(
