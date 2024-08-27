@@ -27,10 +27,10 @@ yabai -m config window_gap 5
 # -- Mouse settings --
 
 # make focus follow mouse (too jank)
-yabai -m config focus_follows_mouse autoraise
+yabai -m config focus_follows_mouse autofocus
 
-# make mouse follow focus (doesn't work across multiple monitors)
-# yabai -m config mouse_follows_focus on
+# make mouse follow focus
+yabai -m config mouse_follows_focus on
 
 # modifier for clicking and dragging with mouse
 yabai -m config mouse_modifier cmd
@@ -38,8 +38,11 @@ yabai -m config mouse_modifier cmd
 # when window is dropped in center of another window, swap them (on edges it will split it)
 yabai -m config mouse_drop_action swap
 
+# show shadows only for floating windows
+yabai -m config window_shadow float
+
 # -- Disable specific apps --
-yabai -m rule --add app="^(Calculator|System Preferences|System Settings|Archive Utility|Finder|Installer|System Information)$" manage=off
+yabai -m rule --add app="^(Calculator|System Preferences|System Settings|Archive Utility|Installer|System Information)$" manage=off
 # yabai -m rule --add title="Software Update" manage=off
 yabai -m rule --add app="^Anki$" title="^Preview" manage=off # Anki card preview
 # yabai -m rule --add title="^Preferences" manage=off
@@ -71,12 +74,30 @@ yabai -m rule --add app="^Firefox$" title="^Extension: " manage=off
 yabai -m rule --add app="^Safari$" title="^Bitwarden$" manage=off
 
 yabai -m rule --add app="^qutebrowser$" title!="^$" role="AXWindow" subrole="AXDialog" manage=on
+yabai -m rule --add app="^wine-preloader$" manage=off
 
-# add 20 padding to the top and 0 padding to the bottom of every space located on the main display
-yabai -m config external_bar all:40:0
+# Fix window focus being lost entirely when last window of an application is
+# closed or hidden. Do this by refocusing the window under the cursor. Note this
+# causes nonstandard refocusing for macOS: macOS o/w refocuses the next window
+# for an application (if it exists) rather than eg the most recently focused
+# other window.
+#
+# https://github.com/koekeishiya/yabai/issues/692
+yabai -m signal --add label=on_dest_refocus event=window_destroyed app!='Maccy' \
+      action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add  label=on_min_refocus event=window_minimized app!='Maccy' \
+      action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add  label=on_hide_refocus event=application_hidden app!='Maccy' \
+      action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add  label=on_term_refocus event=application_terminated app!='Maccy' \
+      action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
 # find all executable files in ~/.config/yabai/scripts and execute them
 find "${HOME}/.config/yabai/scripts" -type f -perm +111 -exec {} \;
 
+yabai -m rule --apply
+
+yabai -m config external_bar all:35:0
+
 # Should be at end of config
-borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
+borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=6.0 &

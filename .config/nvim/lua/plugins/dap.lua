@@ -8,7 +8,7 @@ return {
     'nvim-neotest/nvim-nio',
 
     -- Installs the debug adapters for you
-    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
     'jay-babu/mason-nvim-dap.nvim',
 
     -- Add virtual text
@@ -72,6 +72,7 @@ return {
         'delve', -- Debugger for go
         'javadbg', -- Debug adapter for Java
         'javatest', -- Works with java-debug-adapter to provide support for debugging tests
+        'haskell', -- Debug adapter for Haskell
       },
     }
 

@@ -51,7 +51,7 @@ return {
         tex = { 'latexindent' },
         bib = { 'bibtex-tidy' },
 
-        ['*'] = { 'codespell' },
+        -- ['*'] = { 'codespell' },
         ['_'] = { 'trim_whitespace' },
       },
     },

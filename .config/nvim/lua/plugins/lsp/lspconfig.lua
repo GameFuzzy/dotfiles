@@ -3,7 +3,7 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
-      'williamboman/mason.nvim',
+      { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
@@ -171,6 +171,7 @@ return {
         'latexindent', -- Used to format LaTeX
         'bibtex-tidy', -- Used to format BibTeX
         'jdtls', -- Language server for Java
+        'haskell-language-server', -- Language server for Haskell
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

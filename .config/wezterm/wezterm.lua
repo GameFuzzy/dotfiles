@@ -8,7 +8,11 @@ config.color_scheme_dirs = { "$HOME/.config/wezterm/colors/" }
 config.color_scheme = "Selenized Dark"
 config.window_background_opacity = 0.9
 config.enable_tab_bar = false
-config.window_decorations = "RESIZE"
+config.window_padding = {
+	top = 50,
+}
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.window_close_confirmation = "NeverPrompt"
 
 -- Spawn a fish shell in login mode
 config.default_prog = { "/opt/homebrew/bin/fish" }
